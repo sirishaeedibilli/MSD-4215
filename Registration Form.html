@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body{
+            background-color: rgb(18, 18, 27);
+            color: white;
+            max-width: 500px;
+            margin: auto;
+        }
+        input{
+            background-color: black;
+        }
+        input[type="file"], input[type="number"]{
+            width:100%;
+            background-color: rgb(10, 5, 5);
+            color: white;
+        }
+        textarea{
+            background-color: black;
+            color: rgb(63, 57, 57)
+        }
+        button{
+            background-color: rgb(83, 81, 81);
+            width: 30%;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">Registration Form</h2>
+    <p align="center">Please fill out this form with the required information</p>
+    
+<form>
+    <label for="name"> Enter your First Name:</label><br><br>
+    <input type="text" size="70"><br><br>
+    <label for="name"> Enter your Last Name:</label><br><br>
+    <input type="text" size="70"><br><br>
+    <label for="email"> Enter your Email:</label><br><br>
+    <input type="email" size="70"><br><br>
+    <label for="password"> Create a New Password:</label><br><br>
+    <input type="password" size="70"><br><br><br><hr color="gray">
+    <br>
+    <label>Account type(required)</label><br><br>
+    <input type="radio" id="personal" name="personal-Business" value="personal" checked="">
+    <label for="personal"> Personal</label><br>
+    <input type="radio" id="bussiness" name="personal-Business" value="personal">
+    <label for="bussiness">Bussiness</label> <br><br><hr color="gray">
+    
+    <label for="profile">Upload a profile picture:</label><br><br>
+    <input type="file" width="100%"><br><br>
+    <label for="age"> Input your age(years):</label><br><br>
+    <input type="number" size="100%"><br><br>
+    <label for="about us"> How did you hear about us?</label><br><br>
+    <select name="about us" id="choose">
+        <option type="default">(select one)</option>
+        <option value="Youtube"> Youtube</option>
+        <option value="Instagram"> Instagram</option>
+        <option value="Social Media"> Social Media</option>
+    </select><br><br>
+    
+    <label for="bio"> Provide a bio:</label><br><br>
+    <textarea id="bio" rows="3" cols="65"> I like coding on the beach...</textarea><br><br><br>
+    <input type="checkbox">
+    <label for="terms and conditions">I accept the <u>terms and conditions</u></label><br><br>
+    <center><button type="button"> submit</button><br><br> </center>    
+</form>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
